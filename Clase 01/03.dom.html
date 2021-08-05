@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="contar-titulos">Contar titutlos</button>
+    <p id="contar-resultados"></p>
+    <script>
+        // BOM = window
+        // DOM = document
+        // const titulo1 = document.createElement("h1");
+        // titulo1.innerText = "Titulo!";
+        // const seccion = document.createElement("section");
+        // seccion.appendChild(titulo1);
+        // console.log(seccion.innerHTML, seccion.innerText)
+        // document.body.appendChild(seccion);
+
+        const generarSeccion = (titulo, texto) => {
+            // encabezado
+            const tituloH1 = document.createElement('h1');
+            tituloH1.innerHTML = titulo;
+
+            // contenido
+            const contenido = document.createElement('p');
+            contenido.innerHTML = texto;
+
+            // seccion
+            const seccion = document.createElement("section");
+            seccion.appendChild(tituloH1);
+            seccion.appendChild(contenido);
+            
+            debugger
+            return seccion;
+        }
+        
+        for (let i = 0; i < 10; i++) {
+            document.body.appendChild(generarSeccion('Titulo ' + i, "aksdjfhak djsfhak sjdhf kajdsfkaj"));
+        }
+
+        // document.querySelector('#contar-titulos').onclick = function() {
+        //     debugger
+        // }
+        // document.querySelector('#contar-titulos').onclick = function() {
+        //     debugger
+        // }
+
+        document.querySelector('#contar-titulos').addEventListener('click', (event)=>{
+            document.querySelector('#contar-resultados').innerText = "Cantidad de titutlos = " + document.querySelectorAll('section > h1').length
+        })
+        document.querySelector('#contar-titulos').addEventListener('click', (event)=>{
+            debugger
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iteracion</title>
+</head>
+
+<body>
+    <script>
+        const miLista = [1, 2, 3, 4, 5, 6, 7];
+        // for (let index = 0; index < miLista.length; index++) {
+        //     const element = miLista[index];    
+        // }
+        // miLista[0]
+        //         for (const item in miLista) {
+        // console.log(item)
+        //         }
+        function imprimirItem(item, index, array) {
+            console.log(item);
+        }
+
+        miLista.forEach(imprimirItem);
+
+
+        function nombreCompleto(nombre, apellido) {
+            const varLocal = "algo";
+
+            const name = (nombre) => {
+                console.log(varLocal);
+            }
+            name(nombre);
+            // return "algo"
+        }
+
+        nombreCompleto("Fede", "Rocha");
+
+
+
+        // const resultado = miLista.some(function name(item) {
+        //     return item == 5;
+        // })
+        // const resultado = miLista.map((numero) => "Numero " + numero)
+        // const resultado = miLista.map((numero) => ({ id: numero, nombre: "Nombre "+ numero }))
+        const resultado = miLista.map((numero) => {
+            return {
+                id: numero,
+                nombre: "Nombre " + numero
+            }
+        })
+        console.log('Tiene el numero 5', resultado);
+
+        // tipos de datos
+        // primimitivos -> string, number, boolean, undefined, null
+        // objectos -> array, objecto y funciones
+
+        let variableUno = "algo";
+        let variableDos = variableUno;
+
+        const algo = {
+            nombre: "pepe"
+        }
+
+        const otraCosa = algo;
+        otraCosa.nombre = "Juan"
+
+        // const otraCosaJsAnticuado = Object.create(algo);
+        const otraCosaJsAnticuado = { ...algo };
+
+        otraCosaJsAnticuado.nombre = "Carlos";
+
+        // const sumar = () =>
+        // const sumar = unPara =>
+        // const sumar = (paramUno, paramDos) => paramUno + paramDos;
+        // const sumar = (paramUno, paramDos) => {
+            // ....
+            // ....
+            // return "algo";
+        };
+        debugger
+
+    </script>
+</body>
+
+</html>
