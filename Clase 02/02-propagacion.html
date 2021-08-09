@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - Propagacion</title>
+    <style>
+        body {
+            height: 100vh;
+        }
+
+        body,
+        body div {
+            display: flex;
+            align-self: center;
+            justify-content: center;
+        }
+
+        body div {
+            width: 50%;
+            height: 50%;
+        }
+
+        #uno {
+            background-color: red;
+        }
+
+        #dos {
+            background-color: blue;
+        }
+
+        #tres {
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="uno">
+        <div id="dos">
+            <div id="tres"></div>
+        </div>
+    </div>
+    <script>
+        document
+            .querySelectorAll('div') // selecciono elementos
+            .forEach(item => { // recorremos
+                item.addEventListener(// escuchamos evento
+                    'click', // string del envento
+                    e => { // funcion que se ejecutara
+                        console.log(e.target.id, e.currentTarget.id)
+                    },
+                    true
+                )
+            })
+    </script>
+</body>
+
+</html>
