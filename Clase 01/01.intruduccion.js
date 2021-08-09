@@ -1,6 +1,7 @@
 // var variable = "Algo";
 
 var fede = 'fede'
+var fede = 'NAHUEL'
 
 if (fede === 'fede') {
     // contexto, closed
@@ -10,6 +11,7 @@ if (fede === 'fede') {
 
 let varibleQueSePuedeModificar = "";
 varibleQueSePuedeModificar = 222;
+// let varibleQueSePuedeModificar = ""; // NO SE PUEDE
 
 const varibleQueNOSePuedeModificar = "asdasd";
 // varibleQueNOSePuedeModificar = 12312; // NO SE PUEDE
