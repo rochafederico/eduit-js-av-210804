@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - Formulario</title>
+</head>
+<body>
+    <form method="POST" novalidate>
+        <input name="tyc" id="tyc" type="checkbox" required>
+        <label for="tyc">Terminos y condiciones</label>
+        <button>Ejecutra el submit</button>
+        <button type="button">No ejecutra el submit [type="button"]</button>
+        <button type="reset">Ejecutra el reset</button>
+        <button type="submit">Ejecutra el submit</button>
+    </form>
+    <script>
+        var formulario =  document.querySelector('body > form');
+        // formulario.novalidate = true;
+        formulario.addEventListener('submit', e => {
+            // e.preventDefault();
+            let esValido = true;
+            formulario
+                .querySelectorAll('input:required') // seleccionamos los campos
+                .forEach(item => {
+                    if(!item.validity.valid) {
+                        esValido = false;
+                    }
+                })
+
+            // if(!esValido) {
+            //     e.preventDefault();
+            // }
+            debugger
+            return esValido;
+        })
+
+
+        document
+            .querySelector('#tyc')
+            .addEventListener('change', e => {
+                debugger
+            });
+    </script>
+</body>
+</html>
