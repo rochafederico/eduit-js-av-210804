@@ -1,0 +1,1 @@
+var formulario = document.querySelector('#formulario')
