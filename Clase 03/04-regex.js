@@ -14,10 +14,10 @@
 // var miRegex = /[\W]{2,}/g; // negacion a-zA-Z0-9
 // var miRegex = /[\w]{1,}.[\w]{1,}/g; // comodin
 // var miRegex = /[\s]{1,}/g; // espacios, saltos de linea, etc.
-var miRegex = /[\S]{1,}/g; // negacion espacios, saltos de linea, etc.
+// var miRegex = /[\S]{1,}/g; // negacion espacios, saltos de linea, etc.
+var miRegex = /[\S]{1,}$/g; // negacion espacios, saltos de linea, etc.
 
-
-// console.log(miRegex.test("aaaaasd as"));
+console.log(miRegex.test("aaaaasd as"));
 // console.log(miRegex.exec("aaaaasd as"));
 
 console.log("------")
@@ -26,3 +26,6 @@ for (const item of resultado) {
     console.log(item)
 }
 
+const textoJunto = "Juan,Pepe;Laura,Patri/cia";
+console.log(textoJunto.split(','));
+console.log(textoJunto.split(/[,;\/]/));

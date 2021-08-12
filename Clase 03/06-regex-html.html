@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Contenido editable</h1>
+    <form>
+        <div id="html-contenido" contenteditable="true">
+            .
+        </div>
+        <input type="submit">
+    </form>
+    <script>
+        document.querySelector('form')
+            .addEventListener('submit', (e) => {
+                const htmlContenido = document.getElementById('html-contenido');
+                const htmlURI = encodeURI(htmlContenido); // preparo el string para el servidor
+
+            })
+        const regexURISearch = /[a-z]{1,}[=]{1}[a-z0-9+-_%·.]{0,}/g;
+
+        const resultado = regexURISearch.exec(window.location.search);
+
+        const resultadoLista = window.location.search.matchAll(regexURISearch);
+        for (const item of resultado) {
+            const regexValor = /[=]{1}[a-z0-9+-_%·.]{0,}/g;
+            const decideParametro = decodeURIComponent(regexValor.exec(item)[0].replace('=','')); 
+            console.log(decideParametro);
+        }
+
+    </script>
+</body>
+
+</html>
