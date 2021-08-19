@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+</head>
+
+<body>
+    <h1>Funciona Callbacks</h1>
+    <p>Son parametros de una funcion</p>
+    <main>
+        <section>
+            <h2>Listener</h2>
+            <button type="button" id="boton">Ejecutar callback</button>
+            <button type="button" onclick="var mivar = 'sda'; miCallBack()">Ejecutar callback</button>
+            <script>
+                const miCallBack = (event) => {
+                    alert("Se ejecuto el callback")
+                };
+                // document.getElementById("boton")
+                //     .addEventListener('click', miCallBack)
+
+                document.getElementById("boton").onclick = miCallBack;
+            </script>
+        </section>
+        <section>
+            <h2>Timeout</h2>
+            <script>
+                // creo time out
+                // var miTimeOut = setTimeout((data) => {
+                //     debugger
+                //     alert("Se ejecuto el callback en timeout")
+                // }, 2000, "parametro")
+                // clearTimeout(miTimeOut)
+            </script>
+        </section>
+        <section>
+            <h2>Interval</h2>
+            <script>
+                // creo time out
+                // var miInterval = setInterval((data) => {
+                //     alert("Se ejecuto el callback en timeout")
+                // }, 2000, "parametro")
+                // clearTimeout(miTimeOut)
+            </script>
+        </section>
+        <section>
+            <h2>Mi callback</h2>
+            <script>
+                async function cargar(callback) {
+                    let fecha;
+                    for (let i = 0; i < 10000; i++) {
+                        fecha = new Date();
+                    }
+                    callback(fecha)
+                }
+                
+                cargar((data)=>{
+                    console.log(data)
+                })
+            </script>
+        </section>
+    </main>
+</body>
+
+</html>
