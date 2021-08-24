@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URI</title>
+</head>
+<body>
+    <header>
+        <h1>identificador de recursos uniforme</h1>
+        <p>uniform resource id</p>
+    </header>
+    <p>
+        [esquema]://[autiridad]/[ruta]/?[parametro]=[valor]#[anclas]
+    </p>
+    <section id="esquema">
+        <h2>Esquema</h2>
+        <ul>
+            <li>http/https</li>
+            <li>ftp</li>
+            <li>mailto</li>
+            <li>tel</li>
+            <li>data</li>
+            <li>irc</li>
+        </ul>
+        <p>Segun el equema la URI puede tener distinto formato</p>
+    </section>
+    <section>
+        <h2>Autoridad</h2>
+        <p>Segun el caso podemos tener las 3 partes o solo una o dos</p>
+        <ul>
+            <li>
+                userinfo (opciones)<br>
+                usuario:clave@<br>
+                usuario@
+            </li>
+            <li>
+                anfitrion<br>
+                ip o domino
+            </li>
+            <li>
+                puerto<br>
+                :3000
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2>ruta</h2>
+        <p>Jerarquizar los recursos</p>
+        <ul>
+            <li>/cursos</li>
+            <li>/cursos/obtener-totos</li>
+            <li>/cursos/alumnos</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Query o consulta</h2>
+        <p>si necesitamos pasar parametros al servidor usamos "clave=valor"</p>
+        <ul>
+            <li>?nombreparametro=123</li>
+            <li>?nombreparametro=123&otroparametro=valor</li>
+        </ul>
+    </section>
+    <section id="fragmento">
+        <h2>Fragmento, hash o ancla</h2>
+        <p>Contine un id de un elemento dentro del DOM</p>
+    </section>
+</body>
+</html>

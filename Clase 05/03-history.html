@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#tyc">Terminos y condiciones</a></li>
+    </ul>
+    <nav>
+        <button type="button" onclick="history.go(-2)">
+            Atras 2 paginas
+        </button>
+        <button type="button" onclick="history.back()">
+            Atras
+        </button>
+        <button type="button" onclick="history.go()">
+            Recargar el estado
+        </button>
+        <button type="button" onclick="history.forward()">
+            Adelante
+        </button>
+        <button type="button" onclick="history.go(2)">
+            Adelante 2 paginas
+        </button>
+    </nav>
+    <nav>
+        <button type="button" onclick="irAInicio()">
+            Inicio
+        </button>
+        <button type="button" onclick="irAContacto()">
+            contacto
+        </button>
+        <button type="button" onclick="remplazarPaginaPorInicio()">
+            Reemplazar por Inicio
+        </button>
+    </nav>
+    <main></main>
+    <script src="utilidades.js"></script>
+    <script src="03-history.js"></script>
+</body>
+
+</html>
