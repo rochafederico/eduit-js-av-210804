@@ -31,12 +31,13 @@ const cargarJs = ruta => {
   const scriptActual = document.getElementById("script-dinamico");
   if (scriptActual) {
     scriptActual.src = ruta;
-  } else {
-    const scripteL = document.createElement("script");
-    scripteL.id = "script-dinamico";
-    //   scripteL.innerHTML ='var algo = "asdas";'
-    scripteL.src = ruta;
-
-    document.body.appendChild(scripteL);
+    document.body.removeChild(scriptActual);
   }
+
+  const scripteL = document.createElement("script");
+  scripteL.id = "script-dinamico";
+  //   scripteL.innerHTML ='var algo = "asdas";'
+  scripteL.src = ruta;
+
+  document.body.appendChild(scripteL);
 };

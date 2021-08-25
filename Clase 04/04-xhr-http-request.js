@@ -24,7 +24,7 @@ cargarHtml("04-html-2.html", agregarHtmlAlBody);
 const cargarJson = (urlHtml, callback) => {
   const solicitud = new XMLHttpRequest();
   solicitud.open("GET", urlHtml);
-  solicitud.setRequestHeader("Content-Type", "application/json");
+  solicitud.setRequestHeader("Content-Type", "text/html");
   solicitud.setRequestHeader(
     "Authentication",
     "bearer adskahbfgusher9uw9b384yqb"
@@ -35,8 +35,12 @@ const cargarJson = (urlHtml, callback) => {
   };
 
   solicitud.onerror = err => {
-    debugger;
+    console.err("err", solicitud);
   };
+
+  xhr.addEventListener("timeout", () => {
+    console.log("El pedido se ha excedido de tiempo");
+  });
 
   solicitud.onprogress = progress => {
     debugger;
@@ -59,41 +63,3 @@ if (location.hash.includes("post")) {
     });
   });
 }
-
-// const cargarHtmlAsync = async (urlHtml) => {
-const cargarHtmlAsync = urlHtml =>
-  new Promise((resolve, reject) => {
-    const solicitud = new XMLHttpRequest();
-    // window.ActiveXObject("") IE
-    solicitud.open("GET", urlHtml);
-    // GET POST DELETE PATCH OPNTIONS
-    // HEAD
-
-    solicitud.onload = ev => {
-      resolve(solicitud.response);
-    };
-
-    solicitud.onerror = err => {
-      reject(solicitud.response);
-    };
-
-    solicitud.send();
-  });
-
-// intro a promesas
-var cargando = true;
-cargarHtmlAsync("04.html-template.html")
-  .then(data => {
-    debugger;
-    return data;
-  })
-  .catch(er => {
-    console.log(err);
-  })
-  .finally(() => {
-    cargando = false;
-  })
-  .then(data => {
-    // hago algo
-    return data;
-  });
