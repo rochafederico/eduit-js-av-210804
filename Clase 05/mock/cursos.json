@@ -1,7 +1,12 @@
 [
     {
         "nombre": "Diseño de UI",
-        "categoria": "UX"
+        "categoria": "UX",
+        "archivos": [
+            "clase1.pdf",
+            "clase2.pdf",
+            "clase3.pdf"
+        ]
     },
     {
         "nombre": "Javascript Avanazado",
