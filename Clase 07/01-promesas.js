@@ -23,16 +23,24 @@ const exito = value => {
 const error = err => {
   console.error(err);
 };
-
+let cargando = true;
 const promesaAnindada =  promesa
   .then(exito)
   .then(exito)
   .then(respuesta => {
+    cargando = false;
     // hay errores, entonces throw error
     throw new Error("Se rompio todo!!!");
   })
   .then(exito)
-  .catch(error);
+  .catch(error)
+  // .cath(err =>{
+  //   cargando = false;
+  // })
+  .finally(()=> {
+    cargando = false;
+    console.log('termino')
+  });
 // promesa.then(exito, error);
 // promesa.catch(error);
 

@@ -1,4 +1,4 @@
-const position = position => {
+const getPosition = position => {
   consol.log(position.coords.latitude);
   consol.log(position.coords.longitude);
   consol.log(position.coords.speed);
@@ -27,11 +27,10 @@ const procesarError = err => {
 
 if (window.navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(
-    position,
-    procesarError,
+    getPosition,
     procesarError
   );
-  navigator.geolocation.watchPosition(position);
+  // navigator.geolocation.watchPosition(position);
 } else {
   alert("No podes usar este sitio");
 }
