@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipo</title>
+</head>
+
+<body>
+    <script>
+        const objectoUno = {
+            propUno: 1212
+        }
+
+        const objetoDos = Object.create(objectoUno);
+        const objetoTres = Object.create(objetoDos);
+        const objetoCuatro = Object.create(objetoTres);
+
+        // Object.prototype.
+
+        function Persona(nombre, apellido, callback) {
+            debugger
+            let miVarLocal = 123123;
+
+            this.nombre = nombre;
+            this.apellido = apellido;
+
+            console.log(this);
+            this.hablar = function () {
+                alert('Hola soy' + this.nombre);
+                console.log(this, miVarLocal);
+                // callback()
+            }
+            this.cambiarVarLocal = valor => {
+
+                miVarLocal=valor;
+            }
+        }
+
+        // Persona.prototype
+        Persona.algomio = () => {
+            return 23123123;
+        }
+
+        console.log(Persona.algomio())
+        console.log(new Persona().hablar())
+        // const MiBoje = Object.create(null)
+        // MiBoje.`
+            debugger
+    </script>
+</body>
+
+</html>

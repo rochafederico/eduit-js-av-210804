@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.create</title>
+</head>
+
+<body>
+    <script>
+        const persona = {
+            nombre: null,
+            apeelido: null
+        };
+        persona.nombre = 'Fede';
+
+        for (const key in persona) {
+            if (Object.hasOwnProperty.call(persona, key)) {
+                const valor = persona[key];
+                console.log(key, valor)
+            }
+        }
+
+        for (let i = 0; i < Object.keys(persona).length; i++) {
+            const valor = Object.keys(persona)[i];
+            console.log(i, valor)
+
+        }
+
+        Array.from(persona)
+        const miCponfirguracion = {
+            apeelido: {
+                enumerable: false,
+                configurable: false,
+                writable: false,
+                value: 'Williams'
+            },
+            nombre: {
+                enumerable: true,
+                configurable: true,
+                writable: true,
+                // set: function (v) {
+                //     this.nombre = v;
+                // }
+            }
+        };
+        const humano = Object.create(
+            persona,
+            miCponfirguracion
+        )
+
+        for (const key in humano) {
+            if (Object.hasOwnProperty.call(humano, key)) {
+                const valor = humano[key];
+                console.log(key, valor)
+            }
+        }
+
+        var resultadoDelete = delete humano.apeelido;
+        humano.apeelido = 123123;
+        console.log('Apellido', humano.apeelido);
+
+
+        const programador = {
+            _apellido: 'Perez',
+            _nombre: null,
+            set nombre(valor) {
+                this._nombre = valor;
+            },
+            get fullName() {
+                return this._nombre + ' ' + this._nombre;
+            }
+        }
+        programador.nombre = 'Juan Carlos';
+        console.log('nombre', programador.fullName);
+
+
+        const propiedades = ['nombre', 'apellido'];
+        // const miObjecto = {} <
+        const nuevoObkecto = propiedades.reduce((a, b) => {
+            a[b] = null;
+            return a;
+        }, {});
+        
+        debugger
+    </script>
+</body>
+
+</html>
