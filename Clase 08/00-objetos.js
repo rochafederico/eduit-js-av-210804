@@ -9,7 +9,7 @@ miOtroObjeto.propiedad = 'asdas'
 const miOtroObjetoConCreate  = Object.create(null);
 
 const miFunction = () => console.log('Se ejecuto la funcion')
-
+// miFunction.prototype
 const persona = {
     nombre: null,
     apeelido: null
