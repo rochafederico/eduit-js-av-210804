@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoinvocada</title>
+</head>
+
+<body>
+    <script>
+        (function name(params) {
+            var variableLocal = 12312;
+
+        })('algo');
+        // name('sdas')
+
+        (function (window) {
+            let prefijo = 'empleado-';
+            let cantidad = 0;
+            class Persona {
+                constructor(nombre, edad) {
+                    cantidad++;
+                    this.nombre = nombre;
+                    this.edad = edad;
+                    this.name = prefijo + nombre;
+                }
+            }
+
+            window.Persona = Persona;
+            window.cambiarPrefijo = function(nuevPrefijo) {
+                prefijo = nuevPrefijo;
+            }
+            window.cantidadPersonasCreadas = function() {
+                return cantidad;
+            }
+        })(window)
+    </script>
+</body>
+
+</html>

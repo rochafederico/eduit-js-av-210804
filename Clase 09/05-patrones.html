@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterador</title>
+</head>
+
+<body>
+    <script>
+        var miIterador = new Array();
+        // var miMap = new Map<string, string>();
+        // miIterador.map()
+
+
+        function creadorIterador(lista) {
+            var contador = 0;
+            return {
+                siguiente: function () {
+                    const resultado = lista[contador];
+                    contador++;
+                    return resultado;
+                },
+                termino: function () {
+                    return lista.length <= (contador + 1);
+                }
+            }
+        }
+
+        const miNuevoIterador = creadorIterador(['Juan', 'Laura', 'Pedro']);
+
+        while (!miNuevoIterador.termino()) {
+            console.log(miNuevoIterador.siguiente())
+        }
+
+
+        var miMap = new Map();
+        miMap.set('algo', 'algo');
+        // debugger
+        miMap.clear();
+
+        var miSet = new Set([123,123]);
+        miSet.forEach()
+    </script>
+</body>
+
+</html>
