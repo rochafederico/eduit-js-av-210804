@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuchamos Storage</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <ul></ul>
+        </section>
+    </main>
+    <script>
+        const lista = document.querySelector('ul');
+        const agregarItem = (clave, valor) => {
+            const nuevoItem = document.createElement('li');
+            nuevoItem.innerText = clave + ': ' + valor
+            lista.appendChild(nuevoItem)
+        }
+        window.onstorage = ev => {
+            agregarItem(ev.key, ev.newValue);
+        }
+    </script>
+</body>
+
+</html>

@@ -8,5 +8,9 @@
 </head>
 <body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.1.0/rxjs.umd.js"></script>
+<script>
+    const miSubject = rxjs.BehaviorSubject('Hola');
+    miSubject.subcribe(valor => console.log(valor));
+</script>
 </body>
 </html>

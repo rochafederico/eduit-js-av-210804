@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console</title>
+</head>
+
+<body>
+    <main></main>
+    <script>
+        var objeto = { nombre: 'Juan' }
+        console.log(objeto)
+
+        class DatosUsuario {
+            constructor(nombre, edad) {
+                this.nombre = nombre;
+                this.edad = edad;
+            }
+            nombre = '';
+            edad = 0;
+            toString() {
+                return JSON.stringify(this);
+            }
+            static parse = (valor = '') => {
+                const result = JSON.parse(valor);
+                if (result && result.nombre) {
+                    return new DatosUsuario(result.nombre, result.edad);
+                }
+            }
+        }
+        console.log(new DatosUsuario('Pepe'))
+
+        console.log(document.querySelector('main'))
+        console.dir(document.querySelector('main'))
+        console.dirxml(document.querySelector('main'))
+
+        // Grupos
+        // console.group('Cursos');
+        console.groupCollapsed('Cursos');
+
+        ['JS', 'HTML', 'Reasearch']
+            .forEach(curso => {
+                console.log(curso)
+                console.groupCollapsed('Horarios de ' + curso);
+                for (let i = 0; i < 5; i++) {
+                    console.log('Horaio ' + i);
+                }
+                console.groupEnd();
+            });
+
+        console.log('En el grupo')
+        console.groupEnd()
+        console.log('Fuera del grupo')
+
+        // medir tiempo con console
+        console.time('Aceptar alerta');
+        // alert('Hola!!');
+        console.timeEnd('Aceptar alerta');
+
+        const funcionUno = () => {
+            try {
+                throw new Error('Error controlado')
+            } catch (error) {
+                console.trace()
+                console.warn(error)
+            }
+        }
+
+        const functionDos = () => funcionUno();
+
+        functionDos();
+
+        const personas = [
+            new DatosUsuario('Pepe',34),
+            new DatosUsuario('Fede',23),
+            new DatosUsuario('Pedro',17)
+        ]
+
+        console.table(personas);
+
+        
+        // console.log('Hola %s, como va? %d', prompt('Como te llamas?'), 12312);
+
+        console.log('%cEsto se ve mas lundo', 'color: greenyellow; padding: 20px; font-weight: 900;')
+    </script>
+</body>
+
+</html>
