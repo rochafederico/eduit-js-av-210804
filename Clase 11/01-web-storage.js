@@ -3,7 +3,7 @@
             debugger
             
         }
-// WebStore => API javascript
+// WebStorage => API javascript
 // localStorage > vive hasta que el usuraio borra el cache
 // sessionStorage > vive hasta que el usuario cierra la pestania o ventyanas
 
