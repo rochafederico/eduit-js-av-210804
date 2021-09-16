@@ -1,0 +1,19 @@
+{
+  "name": "api-eduit",
+  "version": "0.0.1",
+  "description": "Proyecto de Node.js para cuerso js avanzado",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rochafederico/eduit-js-av-210804.git"
+  },
+  "author": "EduIT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rochafederico/eduit-js-av-210804/issues"
+  },
+  "homepage": "https://github.com/rochafederico/eduit-js-av-210804#readme"
+}

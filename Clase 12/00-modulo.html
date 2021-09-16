@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulos de js con tag script</title>
+</head>
+
+<body>
+    <!-- <script type="module" src="00-modulo.js"></script> -->
+    <script type="module">
+        // import { Curso } from './00-modulo.js';
+        import * as Modulo from './00-modulo.js';
+        console.log(Modulo.sumar)
+
+        import Curso, { id } from './00-curso.js';
+        // import { id } from './00-curso.js';
+        console.log(Curso)
+    </script>
+</body>
+
+</html>
